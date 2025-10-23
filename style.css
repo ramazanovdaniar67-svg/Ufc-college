@@ -1,0 +1,160 @@
+.root{
+    --bg:#0b0b0b;
+    --panel:hsl(0, 0%, 4%);
+    --accent:#e50914;
+    --muted:#bdbdbd;
+    --text:#f5f5f5;
+    --container:1200px;
+    --radius:12px;
+    --glass: rgba(255,255,255,0.03);
+  }
+  
+  /* === ОБЩИЕ === */
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:linear-gradient(180deg,#070707 0%, #0f0f0f 100%);
+    color:var(--text);
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  
+  /* === КОНТЕЙНЕР === */
+  .container{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:0 18px;
+    background-color:rgb(243, 239, 239)
+  }
+  
+  /* === ШАПКА === */
+  .site-header{
+    border-bottom:4px solid rgb(218, 57, 57), ;
+    padding:26px 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent);
+    text-decoration-color:rgb(2, 2, 2) ;
+  }
+  .site-header h1{
+    color:var(--accent);
+    font-size:2.4rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+  }
+  .site-header .subtitle{
+    color:var(--muted);
+    margin-top:6px;
+    font-size:0.95rem;
+  }
+  
+  /* === СЕТКА КАРТОЧЕК === */
+  .cards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:22px;
+    padding:34px 0 60px 0;
+  }
+  
+  /* === КАРТОЧКА === */
+  .fighter-card{
+    background: linear-gradient(180deg, rgba(107, 105, 105, 0.966), rgba(245, 245, 245, 0.918));
+    border:1px solid rgba(255,255,255,0.03);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow: 0 6px 24px rgba(63, 62, 62, 0.6);
+    transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    display:flex;
+    flex-direction:column;
+    border-radius: 20px;
+  }
+  .fighter-card:hover{
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+    
+  }
+  
+  /* фото */
+  .photo{
+    height:220px;
+    background-size:cover;
+    background-position:center;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    position:relative;
+  }
+  .photo::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:0;height:60%;
+    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
+  }
+  
+  /* инфо */
+  .info{
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-height:220px;
+    color: #fffdfd;
+    background-color: black;
+  }
+  .info h2{
+    color:var(--accent);
+    font-size:1.25rem;
+    letter-spacing:1px;
+    
+
+  }
+  .info ul{
+    list-style:none;
+    color : white ;
+    font-size:0.95rem;
+  }
+  .info li{ padding:4px 0;
+ }
+  .info li strong{ color:var(--text); }
+  
+  /* действия */
+  .card-actions{
+    margin-top:auto;
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .order-btn{
+    color:  linear-gradient(180deg,var(--accent), #b40610);;
+    /* background: linear-gradient(180deg,var(--accent), #b40610); */
+    padding:10px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition: transform .15s ease, opacity .15s ease;
+  }
+  .order-btn:hover{ transform:translateY(-3px); opacity:0.95;
+  color: #f5f5f5; }
+  
+  .more{
+    margin-left:auto;
+    font-size:0.88rem;
+    color:var(--muted);
+    text-decoration:none;
+    padding:6px 8px;
+    border-radius:6px;
+    border:1px solid rgb(238, 236, 236);
+  }
+  .more:hover{ color:var(--accent); border-color:var(--accent); }
+  
+  /* футер */
+  .site-footer{
+    border-top:1px solid rgba(255,255,255,0.03);
+    padding:18px 0;
+    color:var(--muted);
+    font-size:0.9rem;
+  }
+  
+  /* адаптив */
+  @media (max-width:640px){
+    .photo{ height:180px; }
+    .site-header h1{ font-size:1.4rem; }
+    .cards-grid{ gap:14px; }
+  }
